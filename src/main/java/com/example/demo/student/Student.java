@@ -4,9 +4,10 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 
-
-@Entity//hibernate
-@Table
+/**
+ *
+ */
+@Entity//javax persistence
 public class Student {
 
     @Id
