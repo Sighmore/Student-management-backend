@@ -8,12 +8,20 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-
+/**
+ * A service class to handle the business logic
+ * It is annotated with @Service: to indicate that it is a service layer
+ */
 @Service
 public class StudentService {
 
+    //A dependency injection of the StudentRepository to access the database
     private final StudentRepository studentRepository;
 
+    /**
+     * A constructor to inject the StudentRepository
+     * @param studentRepository the student repository
+     */
     @Autowired
     public StudentService(StudentRepository studentRepository){
         this.studentRepository = studentRepository;
@@ -52,6 +60,10 @@ public class StudentService {
     }
     /**
      * update student data based on the id given on the path variable
+     * It checks if the student exists
+     * Then checks if the name and email are not null or empty
+     * If they are not, it checks if the email is already taken
+     * If not, it updates the student record
      */
     @Transactional
     public void updateStudent(Long studentId,String name,String email){

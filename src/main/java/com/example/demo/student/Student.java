@@ -5,11 +5,16 @@ import java.time.LocalDate;
 import java.time.Period;
 
 /**
- *
+    * A class to represent a student
  */
 @Entity//javax persistence
 public class Student {
 
+    /**
+     * Param Id: to indicate that this is the primary key
+     * @GeneratedValue: to indicate that the value will be generated automatically
+     * @SequenceGenerator: to indicate that the value will be generated using a sequence
+     */
     @Id
     @SequenceGenerator(
             name = "student_sequence",
@@ -31,7 +36,7 @@ public class Student {
     public Student() {
     }
 
-    //constructor
+    //constructor to create a new student
     public Student(Long id,
             String name,
             String email,
@@ -41,7 +46,7 @@ public class Student {
         this.email = email;
         this.dob = dob;
     }
-  //constructor
+  //constructor to create a new student
     public Student(String name,
                    String email,
                    LocalDate dob) {
