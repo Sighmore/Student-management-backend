@@ -33,6 +33,11 @@ public class Student {
     @Transient
     private Integer age;
 
+    /**
+     * A constructor to create a new student
+     * why do we need a no-args constructor
+     * Because JPA requires a no-args constructor to create an instance of the entity
+     */
     public Student() {
     }
 
@@ -96,6 +101,12 @@ public class Student {
         this.age = age;
     }
 
+    /**
+     * A function to return the string representation of the student
+     * It is used to print the student object
+     * It is overridden to provide a custom implementation
+     * It is used to print the student object
+     */
     @Override
     public String toString() {
         return "Student{" +
